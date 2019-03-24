@@ -1,5 +1,6 @@
 // src/js/actions/index.js
-import { ADD_ARTICLE } from "../constants/action-types";
-export function addArticle(payload) {
-    return { type: ADD_ARTICLE, payload };
+import { LOGGING_IN } from "../constants/action-types";
+export function logIn(payload) {
+    console.log('stored')
+    return { type: LOGGING_IN, payload };
 }

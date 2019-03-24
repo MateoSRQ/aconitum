@@ -1,14 +1,18 @@
-import { ADD_ARTICLE } from "../constants/action-types";
+import { LOGGING_IN } from "../constants/action-types";
 const initialState = {
-    articles: [],
+    loginForm: {
+        visible: true
+    },
     mainPanel: {
         visible: false
     }
 };
 function rootReducer(state = initialState, action) {
-    if (action.type === ADD_ARTICLE) {
+    if (action.type === LOGGING_IN) {
         return Object.assign({}, state, {
-            articles: state.articles.concat(action.payload)
+            username: action.payload.username,
+            password: action.payload.password,
+            loginForm: { visible: false }
         });
     }
     return state;
